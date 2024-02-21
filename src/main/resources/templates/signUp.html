@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>FlashCash</title>
+</head>
+<body class="signUp">
+<div class="container">
+    <form th:action="@{/signUp}" th:object="${signUpForm}" method="post" class="form-horizontal">
+        <fieldset>
+            <legend>Enregistrement</legend>
+        <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name" required="">
+        <p class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+
+        <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name" required="">
+        <p class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+
+        <input type="email" th:field="*{email}" id="email" placeholder="Email" required="">
+        <p class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+        <input type="password" th:field="*{password}" id="password" placeholder="Password" required="">
+        <p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+
+        <button type="submit">Sign up</button>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

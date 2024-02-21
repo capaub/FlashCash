@@ -1,0 +1,175 @@
+body {
+  font-family: "Arial", sans-serif;
+  background: no-repeat linear-gradient(45deg, #4CAF50, #2980B9);
+  margin: 0;
+  padding-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signIn {
+  justify-content: center;
+  height: 100vh;
+}
+
+.signUp {
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  width: 350px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 7px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1em;
+}
+
+.topNav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  background-color: rgba(245, 245, 245, 0.3607843137);
+}
+.topNav_nav {
+  display: flex;
+}
+.topNav_nav_links {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+.topNav_nav_links_link {
+  width: 100%;
+  list-style: none;
+  padding: 1em;
+}
+.topNav_nav_links_link a:any-link {
+  text-decoration: none;
+}
+
+.profileContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 1em;
+  column-gap: 1em;
+}
+.profileContainer_cards {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.profileContainer_cards_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  background-color: white;
+  border: 1px black;
+  border-radius: 20px;
+  clip-path: border-box;
+}
+.profileContainer_cards_card h3 {
+  color: white;
+  width: 100%;
+  margin: 0;
+  padding: 1em 0;
+  background-color: #0056b3;
+}
+.profileContainer_cards_card_content p {
+  margin: 0.2em;
+}
+.profileContainer_cards_card button {
+  margin-bottom: 1em;
+  padding: 0.4em 1.2em;
+}
+
+table {
+  width: 80%;
+}
+table tbody tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0.8em;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 2em 0;
+}
+.footer_navGroups {
+  display: flex;
+  flex-basis: 60%;
+  justify-content: space-evenly;
+}
+.footer_navGroups_group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3em;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../static/style.css">
+    <title>FlashCash</title>
+</head>
+<body class="signUn">
+
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div th:fragment="_signUp"  class="signup">
+            <form action="#" th:action="@{/user/validate}" th:object="${SignUpForm}" method="post" class="form-horizontal" style="width: 100%">
+
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name" required="">
+                <p class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+
+                <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name" required="">
+                <p class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+
+                <input type="email" th:field="*{email}" id="email" placeholder="Email" required="">
+                <p class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+                <input type="password" th:field="*{password}" id="password" placeholder="Password" required="">
+                <p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>
+
+
+<!--
+
+<main class="Container_main Main">
+
+    <div class="container_login_form">
+        <form method="POST" class="form_container Login">
+
+            <fieldset class="fieldset">
+                <legend>Connexion</legend>
+
+                <div class="elements">
+                    <input type="email" id="email" name="field_email">
+                    <label for="email">Adresse email</label>
+                </div>
+
+                <div class="elements">
+                    <input type="password" id="password" name="field_password">
+                    <label for="password">Mot de passe</label>
+                </div>
+
+            </fieldset>
+
+            <input type="submit" name="form_login" value="Connexion">
+            <a href="?page=<?= PAGE_REGISTER ?>">Inscription</a>
+
+        </form>
+    </div>
+</main>-->

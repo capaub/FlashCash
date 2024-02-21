@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>FlashCash</title>
+</head>
+<body>
+<div class="topNav">
+    <figure class="topNav_logoBox"><img class="topNav_logoBox-logo" src="" alt=""></figure>
+    <nav class="topNav_nav">
+        <ul class="topNav_nav_links">
+            <li class="topNav_nav_links_link"><a href="">Home</a></li>
+            <li class="topNav_nav_links_link"><a href="">Transfer</a></li>
+            <li class="topNav_nav_links_link"><a href="">Profile</a></li>
+            <li class="topNav_nav_links_link"><a href="">Contact</a></li>
+            <li class="topNav_nav_links_link"><a href="">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+<main class="profileContainer">
+    <h1>My Profile</h1>
+    <div class="profileContainer_cards">
+        <div class="profileContainer_cards_card">
+            <h3>Add cash to Flash Cash</h3>
+            <div class="profileContainer_cards_card_content">
+                <p>Add cash with your credit card</p>
+                <p>Free</p>
+                <p>Instant deposit</p>
+                <p>Fully secured</p>
+            </div>
+            <button>Start</button>
+        </div>
+        <div class="profileContainer_cards_card">
+            <h3>Transfer to your bank</h3>
+            <div class="profileContainer_cards_card_content">
+                <p>Instant transfer</p>
+                <p>Free</p>
+                <p>Worldwide</p>
+                <p>Fully secured</p>
+            </div>
+            <button>Start</button>
+        </div>
+        <div class="profileContainer_cards_card">
+            <h3>Add an IBAN</h3>
+            <div class="profileContainer_cards_card_content">
+                <p>Add your IBAN here</p>
+                <p>Up to 5 IBAN</p>
+                <p>Any bank supported</p>
+                <p>Fully secured</p>
+            </div>
+            <button>Start</button>
+        </div>
+    </div>
+    <h2>My account balance</h2>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Amount</th>
+        </tr>
+            <tr th:object="${user}">
+                <td th:text="*{email}"></td>
+                <td th:text="*{userAccount.amount}"></td>
+            </tr>
+    </table>
+</main>
+<div class="footer">
+    <figure class="footer_logoBox"><img class="footer_logoBox_img" src="" alt=""></figure>
+    <div class="footer_navGroups">
+        <div class="footer_navGroups_group">
+            <p class="footer_navGroups_group_title">Cash transfer</p>
+            <a class="footer_navGroups_group_link" href="">FAQ</a>
+            <a class="footer_navGroups_group_link" href="">Why using Flash Cash ?</a>
+        </div>
+
+        <div class="footer_navGroups_group">
+            <p class="footer_navGroups_group_title">Need help ?</p>
+            <a class="footer_navGroups_group_link" href="">Live chat</a>
+            <a class="footer_navGroups_group_link" href="">Contact us</a>
+        </div>
+
+        <div class="footer_navGroups_group">
+            <p class="footer_navGroups_group_title">About</p>
+            <a class="footer_navGroups_group_link" href="">Team</a>
+            <a class="footer_navGroups_group_link" href="">Location</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
