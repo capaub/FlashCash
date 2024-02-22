@@ -46,7 +46,7 @@
             <p>Up to 5 IBAN</p>
             <p>Any bank supported</p>
             <p>Fully secured</p>
-            <button>Start</button>
+            <button type="submit"><a href="/addIban">Start</a></button>
         </div>
     </div>
     <h2>My account balance</h2>
@@ -55,10 +55,10 @@
             <th>User</th>
             <th>Amount</th>
         </tr>
-        <tr th:object="${User}">
+<!--        <tr th:object="${User}">
             <td th:utext="*{email}"></td>
             <td th:utext="*{account.amount}"></td>
-        </tr>
+        </tr>-->
     </table>
 </main>
 <div>

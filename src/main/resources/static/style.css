@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  min-height: 100vh;
 }
 
 .signIn {
@@ -110,6 +111,10 @@ fieldset {
   flex-wrap: wrap;
   row-gap: 1em;
   column-gap: 1em;
+}
+.profileContainer h2 {
+  text-align: center;
+  flex-basis: 100%;
 }
 .profileContainer_cards {
   display: flex;

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Amount</th>
+    </tr>
+    <tr th:object="${user}">
+        <td th:text="*{email}"></td>
+        <td th:text="*{userAccount.amount}"></td>
+    </tr>
+</table>
+</body>
+</html>

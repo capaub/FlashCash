@@ -2,6 +2,7 @@ package com.capaub.FlashCash.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Setter;
 
 @Entity
 @Data

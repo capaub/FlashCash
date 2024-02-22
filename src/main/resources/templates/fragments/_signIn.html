@@ -1,33 +1,3 @@
-<!--
-<section>
-    <div class="">
-        <form method="POST" class="">
-
-            <fieldset class="">
-                <legend>Sign up</legend>
-
-                <div class="">
-                    <input type="email" id="email" name="field_email">
-                    <label for="email">Address mail</label>
-                </div>
-
-                <div class="">
-                    <input type="password" id="password" name="field_password">
-                    <label for="password">password</label>
-                </div>
-            </fieldset>
-
-            <input type="submit" name="form_login" value="Sign Up">
-            <a href="?page=<?= PAGE_REGISTER ?>">Sign Up</a>
-
-        </form>
-    </div>
-    <div>
-        <h2>Discover <span>Flash Cash</span> </h2>
-        <p>easy money transfer application simplify your financial</p>
-        <button></button>
-    </div>
-</section>-->
 
 <div class="login">
     <form action="#" th:action="@{/user/validate}" th:object="${user}" method="post" class="form-horizontal">
