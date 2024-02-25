@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<form th:action="@{/addIban}" th:object="${userAccountUpdated}" method="post" class="form-horizontal">
+<form class="addIbanForm" th:action="@{/addIban}" th:object="${userAccountUpdated}" method="post" class="form-horizontal">
     <fieldset>
         <legend>Enregistrement</legend>
         <input type="text" th:field="*{id}" id="userName" disabled>

@@ -19,7 +19,7 @@ public class UserAccountService {
     }
 
     public void updateIban(UserAccount userAccountUpdated) {
-        UserAccount userAccountRecovered = sessionService.SessionUser().getUserAccount();
+        UserAccount userAccountRecovered = sessionService.sessionUser().getUserAccount();
 
         userAccountRecovered.setIban1(userAccountUpdated.getIban1());
         userAccountRecovered.setIban2(userAccountUpdated.getIban2());
@@ -27,7 +27,7 @@ public class UserAccountService {
         userAccountRecovered.setIban4(userAccountUpdated.getIban4());
         userAccountRecovered.setIban5(userAccountUpdated.getIban5());
 
-        User user = sessionService.SessionUser();
+        User user = sessionService.sessionUser();
 
         user.setUserAccount(userAccountRecovered);
 

@@ -1,4 +1,6 @@
-<div class="topNav">
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="topNav" th:fragment="navBarUser">
     <figure class="topNav_logoBox"><img class="topNav_logoBox-logo" src="" alt=""></figure>
     <nav class="topNav_nav">
         <ul class="topNav_nav_links">
@@ -6,7 +8,9 @@
             <li class="topNav_nav_links_link"><a href="">Transfer</a></li>
             <li class="topNav_nav_links_link"><a href="">Profile</a></li>
             <li class="topNav_nav_links_link"><a href="">Contact</a></li>
-            <li class="topNav_nav_links_link"><a href="">Sign out</a></li>
+            <li class="topNav_nav_links_link"><a href="/logout">Sign out</a></li>
         </ul>
     </nav>
 </div>
+</body>
+</html>

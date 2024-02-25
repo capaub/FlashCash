@@ -13,11 +13,13 @@ body {
 .signIn {
   justify-content: center;
   height: 100vh;
+  padding-top: 0;
 }
 
 .signUp {
   justify-content: center;
   height: 100vh;
+  padding-top: 0;
 }
 
 .container {
@@ -80,14 +82,19 @@ fieldset {
 .topNav {
   display: flex;
   width: 100%;
+  height: 80px;
   justify-content: space-between;
   z-index: 100;
   position: fixed;
   top: 0;
   background-color: rgba(245, 245, 245, 0.3607843137);
+  align-items: center;
 }
 .topNav_nav {
   display: flex;
+  height: 100%;
+  align-items: center;
+  flex-basis: 50%;
 }
 .topNav_nav_links {
   list-style: none;
@@ -120,6 +127,8 @@ fieldset {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  gap: 1em;
+  flex-wrap: wrap;
 }
 .profileContainer_cards_card {
   display: flex;
@@ -133,6 +142,7 @@ fieldset {
   border: 1px black;
   border-radius: 20px;
   clip-path: border-box;
+  box-shadow: 18px 16px 0px 0px black;
 }
 .profileContainer_cards_card h3 {
   color: white;
@@ -147,6 +157,10 @@ fieldset {
 .profileContainer_cards_card button {
   margin-bottom: 1em;
   padding: 0.4em 1.2em;
+}
+.profileContainer_cards_card button a:any-link {
+  text-decoration: none;
+  color: white;
 }
 
 table {
@@ -175,6 +189,15 @@ table tbody tr {
   display: flex;
   flex-direction: column;
   row-gap: 0.3em;
+}
+.container_addIbanForm_groupInput {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+  width: 300px;
+}
+.container_addIbanForm_groupInput label {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

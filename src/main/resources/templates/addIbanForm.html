@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container modal" id="modale">
+    <form class="container_addIbanForm form-horizontal" th:action="@{/addIban}" th:object="${userAccountUpdated}" method="post">
+        <fieldset>
+            <legend>Enregistrement d'IBAN</legend>
+            <div class="container_addIbanForm_groupInput">
+                <label for="iban1">Iban1</label>
+                <input type="text" th:field="*{iban1}" id="iban1" placeholder="iban1">
+            </div>
+            <div class="container_addIbanForm_groupInput">
+                <label for="iban2">Iban2</label>
+                <input type="text" th:field="*{iban2}" id="iban2" placeholder="iban2">
+            </div>
+            <div class="container_addIbanForm_groupInput">
+                <label for="iban3">Iban3</label>
+                <input type="text" th:field="*{iban3}" id="iban3" placeholder="iban3">
+            </div>
+            <div class="container_addIbanForm_groupInput">
+                <label for="iban4">Iban4</label>
+                <input type="text" th:field="*{iban4}" id="iban4" placeholder="iban4">
+            </div>
+            <div class="container_addIbanForm_groupInput">
+                <label for="iban5">Iban5</label>
+                <input type="text" th:field="*{iban5}" id="iban5" placeholder="iban5">
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

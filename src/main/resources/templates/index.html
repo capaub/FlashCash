@@ -9,18 +9,9 @@
     <title>FlashCash</title>
 </head>
 <body>
-    <div class="topNav">
-        <figure class="topNav_logoBox"><img class="topNav_logoBox-logo" src="" alt=""></figure>
-        <nav class="topNav_nav">
-            <ul class="topNav_nav_links">
-                <li class="topNav_nav_links_link"><a href="">Home</a></li>
-                <li class="topNav_nav_links_link"><a href="">Transfer</a></li>
-                <li class="topNav_nav_links_link"><a href="">Profile</a></li>
-                <li class="topNav_nav_links_link"><a href="">Contact</a></li>
-                <li class="topNav_nav_links_link"><a href="">Logout</a></li>
-            </ul>
-        </nav>
-    </div>
+
+<div th:replace="~{navBarUser}" class="topNav"></div>
+
 <main class="profileContainer">
     <h1>My Profile</h1>
     <div class="profileContainer_cards">
@@ -55,31 +46,10 @@
             <th>User</th>
             <th>Amount</th>
         </tr>
-<!--        <tr th:object="${User}">
-            <td th:utext="*{email}"></td>
-            <td th:utext="*{account.amount}"></td>
-        </tr>-->
     </table>
 </main>
-<div>
-    <figure><img src="" alt=""></figure>
-    <div>
-        <p>Cash transfer</p>
-        <a href="">FAQ</a>
-        <a href="">Why using Flash Cash ?</a>
-    </div>
 
-    <div>
-        <p>Need help ?</p>
-        <a href="">Live chat</a>
-        <a href="">Contact us</a>
-    </div>
+<footer th:insert="~{footer}" class="footer"></footer>
 
-    <div>
-        <p>About</p>
-        <a href="">Team</a>
-        <a href="">Location</a>
-    </div>
-</div>
 </body>
 </html>

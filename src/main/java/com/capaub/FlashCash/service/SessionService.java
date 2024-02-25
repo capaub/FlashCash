@@ -14,7 +14,7 @@ public class SessionService {
         this.userRepository = userRepository;
     }
 
-    public User SessionUser() {
+    public User sessionUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUserName = authentication.getName();
         return userRepository.findUserByEmail(currentUserName).get();
