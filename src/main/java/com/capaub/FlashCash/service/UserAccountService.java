@@ -38,7 +38,7 @@ public class UserAccountService {
     public void addCashWithCb(AddCashCbForm addCashCbForm) {
         UserAccount userAccountRecovered = sessionService.sessionUser().getUserAccount();
 
-        userAccountRecovered.setAmount(addCashCbForm.getAmount());
+        userAccountRecovered.setAmount(userAccountRecovered.getAmount() + addCashCbForm.getAmount());
 
         User user = sessionService.sessionUser();
 
