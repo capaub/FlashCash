@@ -4,12 +4,14 @@ import com.capaub.FlashCash.entity.UserAccount;
 import com.capaub.FlashCash.service.SessionService;
 import com.capaub.FlashCash.service.UserAccountService;
 import com.capaub.FlashCash.service.UserService;
+import com.capaub.FlashCash.service.form.AddCashCbForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -31,12 +33,23 @@ public class TransfersController {
     @GetMapping("/addFound")
     public ModelAndView showAddFoundForm(Model model) {
         model.addAttribute("userFromTransfer", sessionService.sessionUser());
-        return new ModelAndView("iban");
+        return new ModelAndView("");
     }
 
     @PostMapping("/addFound")
     public ModelAndView processAddFound(@ModelAttribute("userAccountUpdated") UserAccount userAccountUpdated) {
         userAccountService.updateIban(userAccountUpdated);
         return new ModelAndView("/account");
+    }
+    @GetMapping("/addCashWithCb")
+    @ResponseBody
+    public ModelAndView showIbanForm() {
+        return new ModelAndView("addCashCbForm", "addCashCbForm", new AddCashCbForm());
+    }
+
+    @PostMapping("/addCashWithCb")
+    public ModelAndView processAddIban(@ModelAttribute("addCashCbForm") AddCashCbForm addCashCbForm) {
+        userAccountService.addCashWithCb(addCashCbForm);
+        return new ModelAndView("/account", "user", sessionService.sessionUser());
     }
 }

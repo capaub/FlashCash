@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class DepositCBForm {
+public class AddCashCbForm {
     @NotBlank(message = "cbNumber is required")
     private String cbNumber;
     @NotBlank(message = "date is required")

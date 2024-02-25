@@ -4,28 +4,25 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
-<form class="addCashCbForm" th:action="@{/addCashWithCb}" th:object="${addCashCbForm}" method="post" class="form-horizontal">
+<body>
+<form class="form-horizontal addCashCbForm" th:action="@{/addCashWithCb}" th:object="${addCashCbForm}" method="post">
   <fieldset>
-    <legend>Enregistrement d'IBAN</legend>
+    <legend>Ajouter du cash</legend>
     <div class="container_addIbanForm_groupInput">
-      <label for="iban1">Iban1</label>
-      <input type="text" th:field="*{iban1}" id="iban1" placeholder="iban1">
+      <label for="cbNumber">N° de CB</label>
+      <input type="text" th:field="*{cbNumber}" id="cbNumber" placeholder="1234 3456 3746 9865">
     </div>
     <div class="container_addIbanForm_groupInput">
-      <label for="iban2">Iban2</label>
-      <input type="text" th:field="*{iban2}" id="iban2" placeholder="iban2">
+      <label for="date">Date</label>
+      <input type="text" th:field="*{date}" id="date" placeholder="12/25">
     </div>
     <div class="container_addIbanForm_groupInput">
-      <label for="iban3">Iban3</label>
-      <input type="text" th:field="*{iban3}" id="iban3" placeholder="iban3">
+      <label for="cryptogram">Cryptogram</label>
+      <input type="text" th:field="*{cryptogram}" id="cryptogram" placeholder="777">
     </div>
     <div class="container_addIbanForm_groupInput">
-      <label for="iban4">Iban4</label>
-      <input type="text" th:field="*{iban4}" id="iban4" placeholder="iban4">
-    </div>
-    <div class="container_addIbanForm_groupInput">
-      <label for="iban5">Iban5</label>
-      <input type="text" th:field="*{iban5}" id="iban5" placeholder="iban5">
+      <label for="amount">Amount</label>
+      <input type="number" th:field="*{amount}" id="amount" placeholder="100">
     </div>
     <button type="submit">Submit</button>
   </fieldset>

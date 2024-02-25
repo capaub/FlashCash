@@ -3,6 +3,7 @@ package com.capaub.FlashCash.service;
 import com.capaub.FlashCash.entity.User;
 import com.capaub.FlashCash.entity.UserAccount;
 import com.capaub.FlashCash.repository.UserRepository;
+import com.capaub.FlashCash.service.form.AddCashCbForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,18 @@ public class UserAccountService {
         userAccountRecovered.setIban3(userAccountUpdated.getIban3());
         userAccountRecovered.setIban4(userAccountUpdated.getIban4());
         userAccountRecovered.setIban5(userAccountUpdated.getIban5());
+
+        User user = sessionService.sessionUser();
+
+        user.setUserAccount(userAccountRecovered);
+
+        userRepository.save(user);
+    }
+
+    public void addCashWithCb(AddCashCbForm addCashCbForm) {
+        UserAccount userAccountRecovered = sessionService.sessionUser().getUserAccount();
+
+        userAccountRecovered.setAmount(addCashCbForm.getAmount());
 
         User user = sessionService.sessionUser();
 
