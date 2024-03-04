@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{style.css}" rel="stylesheet">
+    <title>Retrait vers votre compte</title>
+</head>
+<body>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <td>Contact</td>
+                <td>Mail</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="contact : contactList">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
