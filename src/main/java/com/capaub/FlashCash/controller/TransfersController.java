@@ -30,26 +30,27 @@ public class TransfersController {
         this.userAccountService = userAccountService;
     }
 
-    @GetMapping("/addFound")
-    public ModelAndView showAddFoundForm(Model model) {
-        model.addAttribute("userFromTransfer", sessionService.sessionUser());
-        return new ModelAndView("");
-    }
-
-    @PostMapping("/addFound")
-    public ModelAndView processAddFound(@ModelAttribute("userAccountUpdated") UserAccount userAccountUpdated) {
-        userAccountService.updateIban(userAccountUpdated);
-        return new ModelAndView("/account");
-    }
     @GetMapping("/addCashWithCb")
     @ResponseBody
     public ModelAndView showIbanForm() {
         return new ModelAndView("addCashCbForm", "addCashCbForm", new AddCashCbForm());
     }
-
     @PostMapping("/addCashWithCb")
     public ModelAndView processAddIban(@ModelAttribute("addCashCbForm") AddCashCbForm addCashCbForm) {
         userAccountService.addCashWithCb(addCashCbForm);
         return new ModelAndView("/account", "user", sessionService.sessionUser());
     }
+
+    @GetMapping("/withdrawToIban")
+    @ResponseBody
+    public ModelAndView showWithdrawForm(Model model) {
+        model.addAttribute("withdrawForm", sessionService.sessionUser().getUserAccount());
+        return new ModelAndView("withdrawForm");
+    }
+    @PostMapping("/withdrawToIban")
+    public ModelAndView processWithdrawToIban(@ModelAttribute("withdrawForm") UserAccount userAccountUpdated) {
+        userAccountService.withdrawToIban(userAccountUpdated);
+        return new ModelAndView("/account", "user", sessionService.sessionUser());
+    }
+
 }
