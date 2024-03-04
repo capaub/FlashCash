@@ -20,7 +20,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/style.css","/signUp","/signIn").permitAll()
+                        .requestMatchers("/style.css","/signUp","/signIn")
+                        .permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

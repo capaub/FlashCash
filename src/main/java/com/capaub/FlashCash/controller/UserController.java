@@ -1,5 +1,6 @@
 package com.capaub.FlashCash.controller;
 
+import com.capaub.FlashCash.entity.User;
 import com.capaub.FlashCash.entity.UserAccount;
 import com.capaub.FlashCash.service.SessionService;
 import com.capaub.FlashCash.service.UserAccountService;
@@ -30,9 +31,14 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public ModelAndView home(Model model) {
+    public ModelAndView profile(Model model) {
         model.addAttribute("user",sessionService.sessionUser());
         return new ModelAndView("/account");
+    }
+
+    @GetMapping("/index")
+    public String home() {
+        return "/index";
     }
 
     @GetMapping("/signUp")
@@ -57,6 +63,18 @@ public class UserController {
     @PostMapping("/addIban")
     public ModelAndView processAddIban(@ModelAttribute("userAccountUpdated") UserAccount userAccountUpdated) {
         userAccountService.updateIban(userAccountUpdated);
+        return new ModelAndView("/account", "user", sessionService.sessionUser());
+    }
+
+    @GetMapping("/addFriend")
+    @ResponseBody
+    public ModelAndView showAddFriendForm(Model model) {
+        model.addAttribute("userAddFriend", sessionService.sessionUser());
+        return new ModelAndView("addFriendForm");
+    }
+    @PostMapping("/addFriend")
+    public ModelAndView processAddFriendIban(@ModelAttribute("email") String friendMail) {
+        userAccountService.addAFriend(friendMail);
         return new ModelAndView("/account", "user", sessionService.sessionUser());
     }
 
