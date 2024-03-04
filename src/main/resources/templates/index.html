@@ -5,51 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{style.css}">
     <title>FlashCash</title>
 </head>
 <body>
 
-<div th:replace="~{navBarUser}" class="topNav"></div>
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
 
 <main class="profileContainer">
-    <h1>My Profile</h1>
+    <h1>Heureux de vous revoir</h1>
     <div class="profileContainer_cards">
         <div class="profileContainer_cards_card">
             <h3>Add cash to Flash Cash</h3>
-            <p>Add cash with your credit card</p>
-            <p>Free</p>
-            <p>Instant deposit</p>
-            <p>Fully secured</p>
-            <button>Start</button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut autem laudantium maxime
+                natus officiis similique tempore vel? Earum eius minus nobis? Et, nesciunt.</p>
+            <button type="submit"><a th:href="@{/}">Accéder à mon compte</a></button>
         </div>
         <div class="profileContainer_cards_card">
             <h3>Transfer to your bank</h3>
-            <p>Instant transfer</p>
-            <p>Free</p>
-            <p>Worldwide</p>
-            <p>Fully secured</p>
-            <button>Start</button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut autem laudantium maxime
+                natus officiis similique tempore vel? Earum eius minus nobis? Et, nesciunt.</p>
+            <button type="submit"><a th:href="@{/}">Accéder à mon compte</a></button>
         </div>
         <div class="profileContainer_cards_card">
             <h3>Add an IBAN</h3>
-            <p>Add your IBAN here</p>
-            <p>Up to 5 IBAN</p>
-            <p>Any bank supported</p>
-            <p>Fully secured</p>
-            <button type="submit"><a href="/addIban">Start</a></button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto aut autem laudantium maxime
+                natus officiis similique tempore vel? Earum eius minus nobis? Et, nesciunt.</p>
+            <button type="submit"><a th:href="@{/}">Accéder à mon compte</a></button>
         </div>
     </div>
-    <h2>My account balance</h2>
-    <table>
-        <tr>
-            <th>User</th>
-            <th>Amount</th>
-        </tr>
-    </table>
 </main>
 
-<footer th:insert="~{footer}" class="footer"></footer>
+<footer th:insert="~{/fragments/footer}" class="footer"></footer>
 
 </body>
 </html>

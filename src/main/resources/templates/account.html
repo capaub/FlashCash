@@ -5,15 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-<!--
-    <link rel="stylesheet" href="../static/style.css">
--->
+    <link rel="stylesheet" th:href="@{style.css}">
     <title>FlashCash</title>
 </head>
 <body>
 
-<div th:replace="~{navBarUser}" class="topNav"></div>
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
 
 <main class="profileContainer">
     <h1>My Profile</h1>
@@ -26,7 +23,7 @@
                 <p>Instant deposit</p>
                 <p>Fully secured</p>
             </div>
-            <button type="submit"><a href="/addCashWithCb">Start</a></button>
+            <button type="submit"><a th:href="@{/addCashWithCb}">Start</a></button>
         </div>
         <div class="profileContainer_cards_card">
             <h3>Transfer to your bank</h3>
@@ -36,7 +33,7 @@
                 <p>Worldwide</p>
                 <p>Fully secured</p>
             </div>
-            <button type="submit"><a href="/addFound">Start</a></button>
+            <button type="submit"><a th:href="@{/withdrawToIban}">Start</a></button>
         </div>
         <div class="profileContainer_cards_card">
             <h3>Add an IBAN</h3>
@@ -46,7 +43,7 @@
                 <p>Any bank supported</p>
                 <p>Fully secured</p>
             </div>
-            <button onclick="showModal()" type="button"><a href="/addIban">Start</a></button>
+            <button><a th:href="@{/addIban}">Start</a></button>
         </div>
     </div>
     <h2>My account balance</h2>
@@ -55,15 +52,13 @@
             <th>User</th>
             <th>Amount</th>
         </tr>
-            <tr th:object="${user}">
-                <td th:text="*{email}"></td>
-                <td th:text="*{userAccount.amount}"></td>
-            </tr>
+        <tr th:object="${user}">
+            <td th:text="*{email}"></td>
+            <td th:text="*{userAccount.amount} + ' €'"></td>
+        </tr>
     </table>
 </main>
 
-<footer th:insert="~{footer}" class="footer"></footer>
-<script> function showModal() { document.getElementById('modale').style.display = 'block'; } </script>
-
+<footer th:insert="~{/fragments/footer}" class="footer"></footer>
 </body>
 </html>

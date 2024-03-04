@@ -1,10 +1,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head lang="fr" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
     <link th:href="@{style.css}" rel="stylesheet">
+    <title>Ajouter un ami</title>
 </head>
 <body>
-<div class="container modal" id="modale">
-    <form class="container_addIbanForm form-horizontal" th:action="@{/addIban}" th:object="${userAccountUpdated}" method="post">
+<div class="container">
+    <form class="container_addIbanForm" th:action="@{/addIban}" th:object="${userAccountUpdated}" method="post">
         <fieldset>
             <legend>Enregistrement d'IBAN</legend>
             <div class="container_addIbanForm_groupInput">
@@ -30,6 +32,7 @@
             <button type="submit">Submit</button>
         </fieldset>
     </form>
+    <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
 </div>
 </body>
 </html>
