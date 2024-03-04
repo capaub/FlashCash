@@ -169,6 +169,13 @@ fieldset {
 table {
   width: 80%;
 }
+table thead tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0.8em;
+  width: 100%;
+}
 table tbody tr {
   display: flex;
   align-items: center;
