@@ -38,10 +38,6 @@ legend {
   color: #343a40;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
 label {
   display: block;
   margin-bottom: 8px;
@@ -55,6 +51,13 @@ input {
   box-sizing: border-box;
   border: 1px solid #ced4da;
   border-radius: 5px;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 button {
@@ -142,7 +145,7 @@ fieldset {
   border: 1px black;
   border-radius: 20px;
   clip-path: border-box;
-  box-shadow: 18px 16px 0px 0px black;
+  box-shadow: 18px 16px 0 0 black;
 }
 .profileContainer_cards_card h3 {
   color: white;
@@ -197,6 +200,17 @@ table tbody tr {
   width: 300px;
 }
 .container_addIbanForm_groupInput label {
+  margin: 0;
+}
+
+.container_addCashCbForm_groupInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  column-gap: 1em;
+  width: 300px;
+}
+.container_addCashCbForm_groupInput label {
   margin: 0;
 }
 

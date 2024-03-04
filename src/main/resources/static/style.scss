@@ -35,10 +35,6 @@ legend {
   color: #343a40;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
 label {
   display: block;
   margin-bottom: 8px;
@@ -52,6 +48,16 @@ input {
   box-sizing: border-box;
   border: 1px solid #ced4da;
   border-radius: 5px;
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+
+  }
 }
 
 button {
@@ -137,7 +143,7 @@ fieldset {
       border: 1px black;
       border-radius: 20px;
       clip-path: border-box;
-      box-shadow: 18px 16px 0px 0px black;
+      box-shadow: 18px 16px 0 0 black;
       h3{
         color: white;
         width: 100%;
@@ -205,6 +211,17 @@ table{
 .container_addIbanForm_groupInput{
   display: flex;
   align-items: center;
+  column-gap: 1em;
+  width: 300px;
+  label{
+    margin: 0;
+  }
+}
+
+.container_addCashCbForm_groupInput{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   column-gap: 1em;
   width: 300px;
   label{
