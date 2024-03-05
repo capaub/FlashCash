@@ -6,18 +6,26 @@
     <title>Ajouter un ami</title>
 </head>
 <body>
-<div class="container">
-    <form class="container_addCashCbForm" th:action="@{/addFriend}" th:object="${userAddFriend}" method="post">
-        <fieldset>
-            <legend>Ajouter un(e) ami(e) a votre liste</legend>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="email">Email de votre ami(e)</label>
-                <input type="text" th:field="*{email}" id="email" th:placeholder="${'email@domain.com'}">
-            </div>
-            <button type="submit">Ajouter</button>
-        </fieldset>
-    </form>
-    <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
-</div>
+
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
+
+<main>
+    <div class="container">
+        <form class="container_addCashCbForm" th:action="@{/addFriend}" th:object="${userAddFriend}" method="post">
+            <fieldset>
+                <legend>Ajouter un(e) ami(e) a votre liste</legend>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="email">Email de votre ami(e)</label>
+                    <input type="text" th:field="*{email}" id="email" th:placeholder="${'email@domain.com'}">
+                </div>
+                <button type="submit">Ajouter</button>
+            </fieldset>
+        </form>
+        <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
+    </div>
+</main>
+
+<footer th:replace="~{/fragments/footer}" class="footer"></footer>
+
 </body>
 </html>

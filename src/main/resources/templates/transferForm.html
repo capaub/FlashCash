@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{style.css}" rel="stylesheet">
+    <title>Retrait vers votre compte</title>
+</head>
+<body>
+
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
+
+<main>
+    <div class="container">
+        <form class="container_addCashCbForm" th:action="@{/transferToFriend}" th:object="${transferForm}" method="post">
+            <fieldset>
+                <legend>Transfer entre amis</legend>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="mailUserFrom">Depuis votre compte</label>
+                    <input type="text" th:fied="${mailUserFrom}" th:value="*{mailUserFrom}" id="mailUserFrom" th:disabled="true">
+                </div>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="mailUserTo">Email de destination</label>
+                    <input type="text" th:fied="${mailUserTo}" th:value="*{mailUserTo}" id="mailUserTo" th:disabled="true">
+                </div>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="amountBeforeFee">Montant à transferer</label>
+                    <input type="number" th:field="*{amountBeforeFee}"
+                           id="amountBeforeFee" th:max="*{amountBeforeFee}">
+                </div>
+                <button type="submit">Transférer</button>
+            </fieldset>
+        </form>
+        <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
+    </div>
+</main>
+
+<footer th:replace="~{/fragments/footer}" class="footer"></footer>
+
+</body>
+</html>

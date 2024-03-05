@@ -6,23 +6,34 @@
     <title>Retrait vers votre compte</title>
 </head>
 <body>
-<div class="container">
-    <table>
-        <thead>
-            <tr>
+
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
+
+<main>
+    <div class="container">
+        <table class="container_friendList">
+            <thead>
+            <tr class="container_friendList_headTable">
                 <td>Contact</td>
                 <td>Mail</td>
                 <td>Action</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr th:each="contact : contactList">
-                <td></td>
-                <td></td>
-                <td></td>
+            </thead>
+            <tbody>
+            <tr class="container_friendList_bodyTable" th:each="friendList : ${friendDataList}">
+                <td th:text="*{friendList.getFriendName()}" th:disabled="true"></td>
+                <td th:text="*{friendList.getFriendMail()}"></td>
+                <td>
+                    <a th:href="@{/transferToFriend/{friendMail}(friendMail=${friendList.getFriendMail()})}">Envoyer de l'argent</a>
+                </td>
             </tr>
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+        <a th:href="@{/addFriend}">Ajouter un(e) ami(e)</a>
+    </div>
+</main>
+
+<footer th:replace="~{/fragments/footer}" class="footer"></footer>
+
 </body>
 </html>

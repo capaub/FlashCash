@@ -6,28 +6,36 @@
     <title>Retrait vers votre compte</title>
 </head>
 <body>
-<div class="container">
-    <form class="container_addCashCbForm" th:action="@{/withdrawToIban}" th:object="${withdrawForm}" method="post">
-        <fieldset>
-            <legend>Retirer du cash</legend>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="ibanNumber">N° d'iban</label>
-                <select name="ibanNumber" id="ibanNumber">
-                    <option th:value="${withdrawForm.iban1}" th:text="${withdrawForm.iban1}"></option>
-                    <option th:value="${withdrawForm.iban2}" th:text="${withdrawForm.iban2}"></option>
-                    <option th:value="${withdrawForm.iban3}" th:text="${withdrawForm.iban3}"></option>
-                    <option th:value="${withdrawForm.iban4}" th:text="${withdrawForm.iban4}"></option>
-                    <option th:value="${withdrawForm.iban5}" th:text="${withdrawForm.iban5}"></option>
-                </select>
-            </div>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="amount">Montant</label>
-                <input type="number" th:field="*{amount}" th:text="*{amount} + ' Max. disponibe'" id="amount" min="0" th:max="*{amount}">
-            </div>
-            <button type="submit">Submit</button>
-        </fieldset>
-    </form>
-    <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
-</div>
+
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
+
+<main>
+    <div class="container">
+        <form class="container_addCashCbForm" th:action="@{/withdrawToIban}" th:object="${withdrawForm}" method="post">
+            <fieldset>
+                <legend>Retirer du cash</legend>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="ibanNumber">N° d'iban</label>
+                    <select name="ibanNumber" id="ibanNumber">
+                        <option th:value="${withdrawForm.iban1}" th:text="${withdrawForm.iban1}"></option>
+                        <option th:value="${withdrawForm.iban2}" th:text="${withdrawForm.iban2}"></option>
+                        <option th:value="${withdrawForm.iban3}" th:text="${withdrawForm.iban3}"></option>
+                        <option th:value="${withdrawForm.iban4}" th:text="${withdrawForm.iban4}"></option>
+                        <option th:value="${withdrawForm.iban5}" th:text="${withdrawForm.iban5}"></option>
+                    </select>
+                </div>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="amount">Montant</label>
+                    <input type="number" th:field="*{amount}" th:text="*{amount} + ' Max. disponibe'" id="amount" min="0" th:max="*{amount}">
+                </div>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
+    </div>
+</main>
+
+<footer th:replace="~{/fragments/footer}" class="footer"></footer>
+
 </body>
 </html>

@@ -6,30 +6,38 @@
     <title>Formulaire CB d'ajout de cash</title>
 </head>
 <body>
-<div class="container">
-    <form class="container_addCashCbForm" th:action="@{/addCashWithCb}" th:object="${addCashCbForm}" method="post">
-        <fieldset>
-            <legend>Ajouter du cash</legend>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="cbNumber">N° de CB</label>
-                <input type="text" th:field="*{cbNumber}" id="cbNumber" placeholder="1234 3456 3746 9865">
-            </div>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="date">Date</label>
-                <input type="text" th:field="*{date}" id="date" placeholder="12/25">
-            </div>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="cryptogram">Cryptogram</label>
-                <input type="text" th:field="*{cryptogram}" id="cryptogram" placeholder="777">
-            </div>
-            <div class="container_addCashCbForm_groupInput">
-                <label for="amount">Amount</label>
-                <input type="number" th:field="*{amount}" id="amount" placeholder="100" min="0" max="5000">
-            </div>
-            <button type="submit">Submit</button>
-        </fieldset>
-    </form>
-    <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
-</div>
+
+<div th:replace="~{/fragments/navBarUser}" class="topNav"></div>
+
+<main>
+    <div class="container">
+        <form class="container_addCashCbForm" th:action="@{/addCashWithCb}" th:object="${addCashCbForm}" method="post">
+            <fieldset>
+                <legend>Ajouter du cash</legend>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="cbNumber">N° de CB</label>
+                    <input type="text" th:field="*{cbNumber}" id="cbNumber" placeholder="1234 3456 3746 9865">
+                </div>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="date">Date</label>
+                    <input type="text" th:field="*{date}" id="date" placeholder="12/25">
+                </div>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="cryptogram">Cryptogram</label>
+                    <input type="text" th:field="*{cryptogram}" id="cryptogram" placeholder="777">
+                </div>
+                <div class="container_addCashCbForm_groupInput">
+                    <label for="amount">Amount</label>
+                    <input type="number" th:field="*{amount}" id="amount" placeholder="100" min="0" max="5000">
+                </div>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <a th:href="@{/}" class="container_backToAccount">Retour au profil</a>
+    </div>
+</main>
+
+<footer th:replace="~{/fragments/footer}" class="footer"></footer>
+
 </body>
 </html>
