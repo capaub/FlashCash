@@ -90,14 +90,21 @@ fieldset {
   z-index: 100;
   position: fixed;
   top: 0;
-  background-color: rgba(245, 245, 245, 0.3607843137);
+  background-color: #EEEEE2;
   align-items: center;
+}
+.topNav_logoBox {
+  height: 80px;
+  margin: 0 0 0 2em;
+}
+.topNav_logoBox-logo {
+  height: 100%;
 }
 .topNav_nav {
   display: flex;
   height: 100%;
   align-items: center;
-  flex-basis: 50%;
+  flex-basis: 70%;
 }
 .topNav_nav_links {
   list-style: none;
@@ -190,9 +197,12 @@ table tbody tr {
   width: 100%;
   padding: 2em 0;
 }
+.footer_logoBox_img {
+  width: 100%;
+}
 .footer_navGroups {
   display: flex;
-  flex-basis: 60%;
+  flex-basis: 65%;
   justify-content: space-evenly;
 }
 .footer_navGroups_group {
@@ -219,6 +229,30 @@ table tbody tr {
 }
 .container_addCashCbForm_groupInput label {
   margin: 0;
+}
+
+.container_friendList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1em 0;
+  gap: 1em;
+}
+.container_friendList_headTable tr td {
+  flex-basis: 33%;
+}
+.container_friendList_bodyTable {
+  display: flex;
+  width: 100%;
+}
+.container_friendList tr td {
+  flex-basis: 33%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -89,13 +89,20 @@ fieldset {
   z-index: 100;
   position: fixed;
   top: 0;
-  background-color: rgba(245, 245, 245, 0.3607843137);
+  background-color: #EEEEE2;
   align-items: center;
+  &_logoBox{
+    height: 80px;
+    margin: 0 0 0 2em;
+    &-logo{
+      height: 100%;
+    }
+  }
   &_nav{
     display: flex;
     height: 100%;
     align-items: center;
-    flex-basis: 50%;
+    flex-basis: 70%;
     &_links{
       list-style: none;
       display: flex;
@@ -196,12 +203,12 @@ table{
   padding: 2em 0;
   &_logoBox{
     &_img{
-
+      width: 100%;
     }
   }
   &_navGroups{
     display: flex;
-    flex-basis: 60%;
+    flex-basis: 65%;
     justify-content: space-evenly;
     &_group{
       display: flex;
@@ -216,6 +223,7 @@ table{
     }
   }
 }
+
 .container_addIbanForm_groupInput{
   display: flex;
   align-items: center;
@@ -235,4 +243,34 @@ table{
   label{
     margin: 0;
   }
+}
+
+.container_friendList{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1em 0;
+  gap: 1em;
+  &_headTable {
+    tr{
+      td{
+        flex-basis: 33%;
+      }
+
+    }
+  }
+  &_bodyTable {
+    display: flex;
+    width: 100%;
+  }
+  tr{
+    td{
+      flex-basis: 33%;
+    }
+  }
+}
+main{
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
