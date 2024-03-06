@@ -74,8 +74,14 @@ public class UserController {
     }
     @PostMapping("/addFriend")
     public ModelAndView processAddFriendIban(@ModelAttribute("email") String friendMail) {
-        userAccountService.addAFriend(friendMail);
-        return new ModelAndView("/account", "user", sessionService.sessionUser());
+            userAccountService.addAFriend(friendMail);
+            return new ModelAndView("/account", "user", sessionService.sessionUser());
     }
 
+    @GetMapping("/showFriends")
+    @ResponseBody
+    public ModelAndView showFriends(Model model) {
+        model.addAttribute("friendDataList", userAccountService.showMyFriends(sessionService.sessionUser()));
+        return new ModelAndView("contact");
+    }
 }
