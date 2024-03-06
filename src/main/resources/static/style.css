@@ -244,9 +244,16 @@ table tbody tr {
 .container_friendList_bodyTable {
   display: flex;
   width: 100%;
+  margin-bottom: 1em;
 }
 .container_friendList tr td {
   flex-basis: 33%;
+}
+.container_friendList a, .container_friendList ~ a {
+  background-color: #4CAF50;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  margin: 0;
 }
 
 main {

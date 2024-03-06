@@ -262,11 +262,18 @@ table{
   &_bodyTable {
     display: flex;
     width: 100%;
+    margin-bottom: 1em;
   }
   tr{
     td{
       flex-basis: 33%;
     }
+  }
+  a, ~a {
+    background-color: #4CAF50;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    margin: 0;
   }
 }
 main{
