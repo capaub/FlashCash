@@ -2,7 +2,7 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link th:href="@{style.css}" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <title>Retrait vers votre compte</title>
 </head>
 <body>
@@ -16,16 +16,16 @@
                 <legend>Transfer entre amis</legend>
                 <div class="container_addCashCbForm_groupInput">
                     <label for="mailUserFrom">Depuis votre compte</label>
-                    <input type="text" th:fied="${mailUserFrom}" th:value="*{mailUserFrom}" id="mailUserFrom" th:disabled="true">
+                    <input type="text" th:field="*{mailUserFrom}" id="mailUserFrom" th:readonly="readonly">
                 </div>
                 <div class="container_addCashCbForm_groupInput">
                     <label for="mailUserTo">Email de destination</label>
-                    <input type="text" th:fied="${mailUserTo}" th:value="*{mailUserTo}" id="mailUserTo" th:disabled="true">
+                    <input type="text" th:field="*{mailUserTo}" id="mailUserTo" th:readonly="readonly">
                 </div>
                 <div class="container_addCashCbForm_groupInput">
                     <label for="amountBeforeFee">Montant à transferer</label>
                     <input type="number" th:field="*{amountBeforeFee}"
-                           id="amountBeforeFee" th:max="*{amountBeforeFee}">
+                           id="amountBeforeFee" th:max="${maxAmount}">
                 </div>
                 <button type="submit">Transférer</button>
             </fieldset>

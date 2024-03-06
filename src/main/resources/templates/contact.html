@@ -2,7 +2,7 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link th:href="@{style.css}" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <title>Retrait vers votre compte</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <td th:text="*{friendList.getFriendName()}" th:disabled="true"></td>
                 <td th:text="*{friendList.getFriendMail()}"></td>
                 <td>
-                    <a th:href="@{/transferToFriend/{friendMail}(friendMail=${friendList.getFriendMail()})}">Envoyer de l'argent</a>
+                    <a th:href="@{/transferToFriend/{friendMail}(friendMail=${friendList.getFriendMail()})}">Send</a>
                 </td>
             </tr>
             </tbody>
