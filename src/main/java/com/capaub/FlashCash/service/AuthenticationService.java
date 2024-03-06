@@ -1,4 +1,4 @@
-package com.capaub.FlashCash;
+package com.capaub.FlashCash.service;
 
 import com.capaub.FlashCash.entity.User;
 import com.capaub.FlashCash.repository.UserRepository;
