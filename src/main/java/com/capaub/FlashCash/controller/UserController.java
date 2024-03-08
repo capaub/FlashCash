@@ -1,12 +1,10 @@
 package com.capaub.FlashCash.controller;
 
-import com.capaub.FlashCash.entity.User;
 import com.capaub.FlashCash.entity.UserAccount;
 import com.capaub.FlashCash.service.SessionService;
 import com.capaub.FlashCash.service.UserAccountService;
 import com.capaub.FlashCash.service.UserService;
 import com.capaub.FlashCash.service.form.SignUpForm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
-    @Autowired
-    private final UserService userService;
-    @Autowired
-    private final SessionService sessionService;
-    @Autowired
-    private final UserAccountService userAccountService;
 
+    private final UserService userService;
+
+    private final SessionService sessionService;
+
+    private final UserAccountService userAccountService;
     public UserController(UserService userService, SessionService sessionService, UserAccountService userAccountService) {
         this.userAccountService = userAccountService;
         this.userService = userService;

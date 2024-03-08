@@ -6,7 +6,6 @@ import com.capaub.FlashCash.service.TransferService;
 import com.capaub.FlashCash.service.UserAccountService;
 import com.capaub.FlashCash.service.form.AddCashCbForm;
 import com.capaub.FlashCash.service.form.TransferForm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +18,6 @@ public class TransfersController {
     private final SessionService sessionService;
     private final UserAccountService userAccountService;
 
-    @Autowired
     public TransfersController(TransferService transferService, SessionService sessionService, UserAccountService userAccountService) {
         this.transferService = transferService;
         this.sessionService = sessionService;
@@ -34,7 +32,7 @@ public class TransfersController {
     @PostMapping("/addCashWithCb")
     public ModelAndView processAddIban(@ModelAttribute("addCashCbForm") AddCashCbForm addCashCbForm) {
         userAccountService.addCashWithCb(addCashCbForm);
-        return new ModelAndView("/account", "user", sessionService.sessionUser());
+        return new ModelAndView("account", "user", sessionService.sessionUser());
     }
 
     @GetMapping("/withdrawToIban")

@@ -7,7 +7,6 @@ import com.capaub.FlashCash.repository.SocialLinkRepository;
 import com.capaub.FlashCash.repository.UserRepository;
 import com.capaub.FlashCash.service.form.AddCashCbForm;
 import com.capaub.FlashCash.service.form.FriendList;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,11 +14,8 @@ import java.util.List;
 
 @Service
 public class UserAccountService {
-    @Autowired
     private final UserRepository userRepository;
-    @Autowired
     private final SessionService sessionService;
-    @Autowired
     private final SocialLinkRepository socialLinkRepository;
 
     public UserAccountService(UserRepository userRepository, SessionService sessionService, SocialLinkRepository socialLinkRepository) {

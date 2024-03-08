@@ -4,15 +4,12 @@ import com.capaub.FlashCash.entity.User;
 import com.capaub.FlashCash.entity.UserAccount;
 import com.capaub.FlashCash.repository.UserRepository;
 import com.capaub.FlashCash.service.form.SignUpForm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    @Autowired
     private final UserRepository userRepository;
-    @Autowired
     private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {

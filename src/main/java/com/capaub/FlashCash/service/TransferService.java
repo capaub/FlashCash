@@ -7,7 +7,6 @@ import com.capaub.FlashCash.repository.TransferRepository;
 import com.capaub.FlashCash.repository.UserAccountRepository;
 import com.capaub.FlashCash.repository.UserRepository;
 import com.capaub.FlashCash.service.form.TransferForm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,11 +14,8 @@ import java.time.LocalDateTime;
 @Service
 public class TransferService {
 
-    @Autowired
     private final UserAccountRepository userAccountRepository;
-    @Autowired
     private final UserRepository userRepository;
-    @Autowired
     private final TransferRepository transferRepository;
 
     public TransferService(UserAccountRepository userAccountRepository, UserRepository userRepository, TransferRepository transferRepository) {

@@ -24,7 +24,7 @@
                 </div>
                 <div class="container_addCashCbForm_groupInput">
                     <label for="amountBeforeFee">Montant à transferer</label>
-                    <input type="number" th:field="*{amountBeforeFee}"
+                    <input type="number" step="any" th:field="*{amountBeforeFee}"
                            id="amountBeforeFee" th:max="${maxAmount}">
                 </div>
                 <button type="submit">Transférer</button>
